@@ -1,0 +1,29 @@
+#Copiled object file
+*.o
+
+#Executables
+*.exe
+*.out
+
+#Copiled libraries
+*.a
+*.so
+
+#Disable for now
+*.cmake
+
+#Build directory
+/build/
+
+#External directory
+/external/
+
+#Dependency files
+*.d
+
+#Editor files/IDE specific files
+.vscode/
+.idea/
+
+#Dont track sonnar files
+.scannerwork/
