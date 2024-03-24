@@ -24,3 +24,16 @@ file(GLOB SOURCES "src/*.c")
 
 #Define the executable
 add_executable(${PROJECT_NAME} ${SOURCES})
+
+#Compile the libraries
+#CMake aislados los va a incluir como proyectos independientes
+add_subdirectory(lib/libdyn)
+add_subdirectory(lib/libsta)
+
+#include headers in lib
+#incluye los ejecutables
+target_include_directories(${PROJECT_NAME} PUBLIC lib/libdyn/include)
+target_include_directories(${PROJECT_NAME} PUBLIC lib/libsta/include)
+
+#Link the libraries
+target_link_libraries(${PROJECT_NAME} StatiCLib DynamiCLib)
